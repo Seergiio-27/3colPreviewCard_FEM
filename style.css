@@ -1,0 +1,179 @@
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/* CSS resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Root variables */
+
+:root {
+
+    /* Primary colors */
+    --clr-bright-orange:hsl(31, 77%, 52%);
+    --clr-dark-cyan: hsl(184, 100%, 22%);
+    --clr-very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* Neutral colors */
+    --clr-transparent-white: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+    --clr-very-light-gray:  hsl(0, 0%, 95%); /* background, headings, buttons */
+
+    /* Typography */
+    --fs-normal: 0.9375rem;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --ff-title: "Big Shoulders Display", sans-serif;
+    --ff-paragraph: "Lexend Deca", sans-serif;
+}
+
+/* General styles */
+
+.wrapper {
+    margin: 5rem 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.card-text {
+    font-family: var(--ff-paragraph);
+    font-size: var(--fs-paragraph);
+    color: var(--clr-transparent-white);
+    font-weight: var(--fw-400);
+    line-height: 1.9;
+    padding-bottom: 1rem;
+}
+
+.card-title {
+    font-family: var(--ff-title);
+    font-weight: var(--fw-700);
+    color: var(--clr-very-light-gray);
+}
+
+.sedan-card {
+    background-color: var(--clr-bright-orange);
+}
+
+.suv-card {
+    background-color: var(--clr-dark-cyan);
+}
+
+.luxury-card {
+    background-color: var(--clr-very-dark-cyan);
+}
+
+.card {
+    padding: 2.5rem;
+}
+
+/* Button styles */
+
+button {
+    cursor: pointer;
+    background-color: var(--clr-very-light-gray);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    font-family: var(--ff-paragraph);
+    transition: .1s ease;
+    border: 2px solid transparent;
+}
+
+button:hover {
+    border: 2px solid var(--clr-very-light-gray);
+    background: none;
+    color: var(--clr-very-light-gray);
+}
+
+.sedan-btn {
+    color: var(--clr-bright-orange);
+}
+
+.suv-btn {
+    color: var(--clr-dark-cyan);
+}
+
+.luxury-btn {
+    color: var(--clr-very-dark-cyan);
+}
+
+/* Media queries */
+
+/* large mobile screens */ 
+
+@media (min-width: 550px) {
+
+    body {
+        display: grid;
+        place-content: center;
+    }
+
+    .wrapper {
+        max-width: 500px;
+    }
+}
+
+/* tablet screens */
+
+@media (min-width: 768px) {
+
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+    }
+
+    .wrapper {
+        max-width: 800px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        padding-inline: 2.5rem;
+    }
+}
+
+/* desktop screens */
+
+@media (min-width: 1024px) {
+
+    .wrapper {
+        max-width: 900px;
+    }
+
+    .card {
+        padding-inline: 2.8rem;
+    }
+
+    .card-text {
+        padding-bottom: 4rem;
+
+    }
+}
+
+
